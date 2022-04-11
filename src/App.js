@@ -1,20 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card from "react-bootstrap/Card";
 import React from "react";
-import LoginForm from "./components/login/LoginForm";
+import Login from "./components/login/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
 
 function App() {
-  return (
-    <div className="App">
-        
-        <Card body>
-          <LoginForm />
-        </Card>
-      </div>
-    
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<Routes>
+					<Route path="/" element={<Login />} />
+          </Routes>
+          </div>
+          </BrowserRouter>   
   );
 }
 
