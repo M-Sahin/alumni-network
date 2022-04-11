@@ -2,6 +2,10 @@ import TimelineInfo from "./TimelineInfo";
 import './Timeline.css';
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 const Timeline = () => (
     <>
     <h1> Timeline</h1>
@@ -16,4 +20,8 @@ const Timeline = () => (
     </>
 )
 
+<<<<<<< Updated upstream
 export default Timeline;
+=======
+export default Timeline;
+>>>>>>> Stashed changes

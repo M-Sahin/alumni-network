@@ -11,9 +11,16 @@ function App() {
 	return (
 		<BrowserRouter>
 			<div className="App">
+<<<<<<< Updated upstream
 				<Routes>
 					<Route path="/" element={<Login />} />
 					<Route path="/timeline" element={<Timeline />} />
+=======
+				<Routes>					
+					<Route path="/" element={<Login />} />	
+					<Route path="/timeline" element={ <Timeline /> } />	
+							
+>>>>>>> Stashed changes
           </Routes>
           </div>
           </BrowserRouter>   

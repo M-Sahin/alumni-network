@@ -1,5 +1,6 @@
 const data = [
     {
+<<<<<<< Updated upstream
         text: 'first post',
         date: Date()
     }, 
@@ -19,5 +20,29 @@ const data = [
         date: Date()
     }, 
 ];
+=======
+        text: 'First Post',
+        date: Date(),
+    },
+    {
+        text: 'Second Post',
+        date: Date(),
+    },
+    {
+        text: 'Third Post',
+        date: Date(),
+    },
+    {
+        text:
+            'Fourth Post',
+        date: Date(),
+    },
+    {
+        text: 'Fifth Post',
+        date: Date(),
+    },
+
+]
+>>>>>>> Stashed changes
 
 export default data;

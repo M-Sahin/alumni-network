@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 * {
+<<<<<<< Updated upstream
     box-sizing: border-box;
 }
 
@@ -19,6 +20,26 @@ body {
 
 h1 {
     text-align: center;
+=======
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	min-height: 100vh;
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+>>>>>>> Stashed changes
 }
 
 .btn1 {
@@ -43,9 +64,16 @@ input {
 }
 
 
+<<<<<<< Updated upstream
 #TimelineInfo {
     padding: 0 20px;
     width: 100%;
+=======
+
+#TimelineInfo {
+	padding: 0 20px;
+	width: 100%;
+>>>>>>> Stashed changes
 }
 
 .timeline-container {
@@ -148,8 +176,13 @@ input {
 }
 
 .timeline-item-content a {
+<<<<<<< Updated upstream
     color: #333;
     text-decoration: none;
+=======
+	color: #333;
+	text-decoration: none;
+>>>>>>> Stashed changes
     font-size: 14px;
     font-weight: bold;
 }
