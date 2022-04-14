@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./components/login/Login";
-import Nav from "./components/navbar/navbar.js";
+import Timeline from "./components/timeline/Timeline";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -13,8 +13,11 @@ function App() {
 		<div className="App">
 			<Nav />
 		<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Login />} />
+			<div className="App">
+				<Routes>					
+					<Route path="/" element={<Login />} />	
+					<Route path="/timeline" element={ <Timeline /> } />	
+							
           </Routes>
           </BrowserRouter>   
 		  </div>
