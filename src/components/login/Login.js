@@ -1,7 +1,10 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
+
 
 const Login = () => (
-<h2>Login</h2>
+<div>
+    <h2>This is the login page.</h2>
+</div>
+
 );
 export default Login
