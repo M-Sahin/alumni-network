@@ -3,18 +3,20 @@ import {LoadPosts, UpdatePost, NewPost} from './Timeline';
 import { useState } from "react";
 import { Button, Modal } from 'react-bootstrap';
 
+
 function TimelineView(){
-  
-   LoadPosts()  
-  
+   LoadPosts()
   let posts = (JSON.parse(localStorage.getItem("posts")))
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   const handleClose = () => setShow(false);
   const handleClose2 = () => setShow2(false);
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
 
-  function handlePost(id){
+
+  function handlePost(){
     setShow2(false);
     let title = document.getElementById("PostTitle").value;
     let body = document.getElementById("PostBody").value;
@@ -22,34 +24,29 @@ function TimelineView(){
     let targetUserId = document.getElementById("PostTargetUserId").value;
     let targetGroupId = document.getElementById("PostTargetGroupId").value;
     let targetTopicId = document.getElementById("targetTopicId").value;
-    NewPost(title, body, senderUserId, targetUserId, targetGroupId, targetTopicId)    
+        NewPost(title, body, senderUserId, targetUserId, targetGroupId, targetTopicId)
   }
 
-  function handleUpdate(id){    
+
+  async function handleUpdate(id){
     setShow(false);
-    let title = document.getElementById("newTitle").value;
-    let body = document.getElementById("newBody").value;
-    console.log(title);
-    UpdatePost(title, body, id)     
+    await UpdatePost(title, body, id)
     console.log(id)
   }
+
 
   function modalindex(index) {
     setShow(true);
     setModalIndex(index)
   }
 
+
   const handleShow = () => setShow2(true);
-
   return (
-    
-
   <section>
-
 <Button variant="primary" onClick={handleShow}>
         Post
       </Button>
-
       <Modal show={show2} onHide={handleClose2}>
         <Modal.Header closeButton>
           <Modal.Title>Post</Modal.Title>
@@ -86,10 +83,8 @@ function TimelineView(){
             />
         <button class="btn1">Search</button>
 
-{posts.map((post, index) => (  
 
-
-
+{posts.map((post, index) => (
 <div class="card">
   <div class="card-body">
     <p class="card-text"></p>
@@ -105,10 +100,10 @@ function TimelineView(){
         </Modal.Header>
         <Modal.Body>
           <div class="form-group">
-            <label for="newTitle">title:</label>
-            <input type="text" defaultValue={posts[modalIndex].title} class="form-control" id="newTitle"></input>
-            <label for="newBody">body:</label>
-            <input type="text" defaultValue = {posts[modalIndex].body} class="form-control" id="newBody"></input>
+            <label for="UpdatedTitle">title:</label>
+            <input type="text" defaultValue = {posts[modalIndex].title} class="form-control" id="newTitle" onChange={(e) => setTitle(e.target.value)}></input>
+            <label for="UpdatedBody">body:</label>
+            <input type="text" defaultValue = {posts[modalIndex].body} class="form-control" id="newBody" onChange={(e) => setBody(e.target.value)}></input>
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -121,16 +116,11 @@ function TimelineView(){
         </Modal.Footer>
       </Modal>
   </div>
-</div>  
-
-
-))} 
-
-
-
-        
+</div>
+))}
 </section>
   );
 };
+
 export default TimelineView;
 

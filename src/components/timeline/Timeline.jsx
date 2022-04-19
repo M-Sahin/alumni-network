@@ -1,16 +1,18 @@
-import { createHeaders } from "react";
+import { createHeaders } from "../..";
 
   const UpdatePost = async (title, body, id) => {    
-           try {
+    
+           try {           
           const response = await fetch("https://localhost:44370/api/Posts/" + id, {
             method: "PATCH",
             headers: createHeaders(),
             body: JSON.stringify({
               post_Id: id,
               body: body,
-              title: title              
+              title: title                          
             }),
             });
+            
    
           if (!response.ok) {
             throw new Error("Could not update the post");
@@ -18,9 +20,11 @@ import { createHeaders } from "react";
           
           const result = await response.json();
           return [null, result];
+          
         } catch (error) {
           return [error.message, null];
         }
+        
       };
 
   const NewPost = async (title, body, senderUserId, targetUserId, targetGroupId, targetTopicId) => {
