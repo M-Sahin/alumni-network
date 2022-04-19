@@ -1,9 +1,6 @@
 import { createHeaders } from "react";
 
-
-
-  const UpdatePost = async (title, body, id) => {
-    console.log(body)
+  const UpdatePost = async (title, body, id) => {    
            try {
           const response = await fetch("https://localhost:44370/api/Posts/" + id, {
             method: "PATCH",
@@ -25,6 +22,23 @@ import { createHeaders } from "react";
           return [error.message, null];
         }
       };
+
+  const NewPost = async (title, body, senderUserId, targetUserId, targetGroupId, targetTopicId) => {
+    fetch("https://localhost:44370/api/Posts", {
+    
+
+    method: 'POST',      
+    headers: {'Content-Type': 'application/json; charset=utf-8 '},
+    body: JSON.stringify({
+      title: title,
+      body: body,
+      senderUserId: senderUserId,
+      targetUserId: targetUserId,
+      targetGroupId: targetGroupId,
+      targetTopicId: targetTopicId
+    }),
+  });
+  };
 
   
 
@@ -55,5 +69,5 @@ async function LoadPosts() {
 
 
 
-export  {LoadPosts, UpdatePost}
+export  {LoadPosts, UpdatePost, NewPost}
 
