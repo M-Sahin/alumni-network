@@ -81,7 +81,7 @@ function TimelineView(){
             type="text"
             placeholder="Search post"
             />
-        <button class="btn1">Search</button>
+        <button class="btn btn-primary">Search</button>
 
 
 {posts.map((post, index) => (
