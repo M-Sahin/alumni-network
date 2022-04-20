@@ -90,7 +90,7 @@ function TimelineView(){
     <p class="card-text"></p>
     <p>{post.title}</p>
     <p>{post.body}</p>
-    <button type="button" class="btn btn-primary">React</button>
+    <a href="/replies"><button type="button" class="btn btn-primary">Reply</button></a>
     <Button variant="primary" onClick={() => modalindex(index)}>
         Edit
     </Button>

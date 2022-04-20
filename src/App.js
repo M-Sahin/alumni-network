@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import Login from "./components/login/Login";
 import TimelineView from "./components/timeline/TimelineView";
+import RepliesView from "./components/replies/RepliesView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -13,7 +14,8 @@ function App() {
 			<div className="App">
 				<Routes>					
 					<Route path="/" element={<Login />} />	
-					<Route path="/timeline" element={ <TimelineView /> } />					
+					<Route path="/timeline" element={ <TimelineView /> } />	
+					<Route path="/replies" element={ <RepliesView /> } />				
 							
           </Routes>
           </div>
