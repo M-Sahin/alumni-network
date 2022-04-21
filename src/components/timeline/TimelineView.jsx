@@ -46,6 +46,7 @@ function handlePost(){
 
 async function handleUpdate(id){
     setShow(false);
+    console.log(title, body)
     await UpdatePost(title, body, id)
     console.log(id)
 }
@@ -91,7 +92,7 @@ return (
      </Button>
     </Modal.Footer>
   </Modal>      
-  <Searchbar />
+  <Searchbar class="searchbar" />
     {setSearchQuery}
         
 <ul>
@@ -112,16 +113,16 @@ return (
     <Modal.Body>
       <div class="form-group">
           <label for="UpdatedTitle">title:</label>
-          <input type="text" defaultValue = {posts[modalIndex].title} class="form-control" id="newTitle" onChange={(e) => setTitle(e.target.value)}></input>
+          <input type="text" defaultValue = {filteredPosts[modalIndex].title} class="form-control" id="newTitle" onChange={(e) => setTitle(e.target.value)}></input>
           <label for="UpdatedBody">body:</label>
-          <input type="text" defaultValue = {posts[modalIndex].body} class="form-control" id="newBody" onChange={(e) => setBody(e.target.value)}></input>
+          <input type="text" defaultValue = {filteredPosts[modalIndex].body} class="form-control" id="newBody" onChange={(e) => setBody(e.target.value)}></input>
       </div>
     </Modal.Body>
     <Modal.Footer>
       <Button variant="secondary" onClick={handleClose}>
           Close
       </Button>
-      <Button variant="primary" onClick={() => handleUpdate(posts[modalIndex].id)}>
+      <Button variant="primary" onClick={() => handleUpdate(filteredPosts[modalIndex].id)}>
           Save Changes
       </Button>
     </Modal.Footer>
