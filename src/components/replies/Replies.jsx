@@ -17,4 +17,14 @@ async function LoadReplies() {
       
   };
 
-  export  {LoadReplies}
+  const NewReply = async (body) => {
+    fetch("https://localhost:44370/api/Replies", { 
+    method: 'POST',      
+    headers: {'Content-Type': 'application/json; charset=utf-8 '},
+    body: JSON.stringify({ 
+      body: body
+    }),
+  });
+  };
+
+  export  {LoadReplies, NewReply}

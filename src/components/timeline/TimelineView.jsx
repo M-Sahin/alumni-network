@@ -14,6 +14,7 @@ function TimelineView(){
   const handleClose2 = () => setShow2(false);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+ 
 
 
   function handlePost(){
@@ -76,13 +77,8 @@ function TimelineView(){
           </Button>
         </Modal.Footer>
       </Modal>
-    <input
-            id="translationInput"
-            type="text"
-            placeholder="Search post"
-            />
+      <input placeholder="Enter Post Title" />
         <button class="btn btn-primary">Search</button>
-
 
 {posts.map((post, index) => (
 <div class="card">
@@ -91,7 +87,7 @@ function TimelineView(){
     <p>{post.title}</p>
     <p>{post.body}</p>
     <a href="/replies"><button type="button" class="btn btn-primary">Reply</button></a>
-    <Button variant="primary" onClick={() => modalindex(index)}>
+    <Button variant="primary" class="btn btn-primary" onClick={() => modalindex(index)}>
         Edit
     </Button>
 <Modal show={show} onHide={handleClose}>
