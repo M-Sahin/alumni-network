@@ -60,7 +60,7 @@ const handleShow = () => setShow2(true);
 
 return (
 <section>
-  <Button variant="primary" onClick={handleShow}>
+  <Button variant="primary" class="btn btn-primary mr-1" onClick={handleShow}>
     Post
   </Button>
   <Modal show={show2} onHide={handleClose2}>
@@ -92,17 +92,17 @@ return (
      </Button>
     </Modal.Footer>
   </Modal>      
-  <Searchbar class="searchbar" />
+  <Searchbar />
     {setSearchQuery}
-        
+
 <ul>
 {filteredPosts.map((post, index) => (
 <div class="card">
   <div class="card-body">
     <p class="card-text"></p>
     <p>{post.title}</p>
-    <p>{post.body}</p>
-    <a href="/replies"><button type="button" class="btn btn-primary">Reply</button></a>
+    <p>{post.body}</p> 
+    <a href="/replies"><button type="button" class="btn btn-primary mr-1">Reply</button></a>
     <Button variant="primary" class="btn btn-primary" onClick={() => modalindex(index)}>
         Edit
     </Button>

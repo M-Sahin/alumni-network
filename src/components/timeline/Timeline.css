@@ -20,14 +20,15 @@ h1 {
 	text-align: center;
 }
 
-.button {
-    margin-right: 50px;
-    border-radius:10px;    
-}
 
 
 input {
     border-radius:10px;    
+}
+
+.btn-primary {
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 .buttons {
