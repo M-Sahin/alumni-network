@@ -5,6 +5,7 @@ import { Button, Modal } from 'react-bootstrap';
 import Searchbar from '../searchbar/Searchbar';
 
 
+
 function TimelineView(){
   LoadPosts()
   let posts = (JSON.parse(localStorage.getItem("posts")))
