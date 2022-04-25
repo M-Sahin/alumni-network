@@ -2,7 +2,6 @@ async function LoadPost() {
 
   let posts = []
   let postsData = []
-console.log(sessionStorage.getItem('postId'))
  await fetch('https://localhost:44370/api/Posts/' + sessionStorage.getItem('postId'))  
       .then(response => response.json())
       .then(data => posts.push(data));     
@@ -17,7 +16,8 @@ console.log(sessionStorage.getItem('postId'))
           body: post.body
         })
       ))
-      localStorage.setItem("post", JSON.stringify(postsData))        
+      localStorage.setItem("post", JSON.stringify(postsData))     
+       
     
 };
 
@@ -26,17 +26,22 @@ async function LoadReplies() {
   let replies = []
   let repliesData = []   
 
-  await fetch('https://localhost:44370/api/Replies/post/' + sessionStorage.getItem('postId') )  
+  await fetch('https://localhost:44370/api/Posts/replies/' + sessionStorage.getItem('postId'))  
       .then(response => response.json())
-      .then(data => replies.push(data));
-      replies.map(reply=>(
-          repliesData.push({
-          id: reply.reply_Id,
-          body: reply.body
-        })
-      ))
-      localStorage.setItem("replies", JSON.stringify(repliesData))    
-      console.log(localStorage.getItem("replies"))      
+      .then(data => replies.push(data));      
+      replies.map((reply) => {   
+          reply.map((reply1) => {           
+            repliesData.push({
+              id: reply1.reply_Id,
+              body: reply1.body              
+            })          
+        });
+      });
+      localStorage.setItem("replies", JSON.stringify(repliesData))   
+      console.log(repliesData)
+       
+      
+                   
 };
 
 

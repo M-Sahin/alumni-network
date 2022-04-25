@@ -5,9 +5,11 @@ import { LoadReplies, NewReply, LoadPost} from './Replies';
 
 function RepliesView(){
 LoadReplies()
+let replies = JSON.parse(localStorage.getItem("replies"))
 LoadPost()
-let replies = (JSON.parse(localStorage.getItem("replies")))
 let post = (JSON.parse(localStorage.getItem("post")))
+
+
 
 
 
@@ -15,10 +17,6 @@ function handleReply(){
     let body = document.getElementById("reply").value;
     NewReply(body, sessionStorage.getItem('postId'))    
   }
-
-
-
-
 
 
 return ( 
@@ -35,12 +33,18 @@ return (
 
 
 
-<div class="card">
-  <div class="card-body">
-    <p class="card-text"></p>
-    <p>{replies[0].body}</p>        
+    
+    {replies.map((reply) =>
+    <div class="card">
+    <div class="card-body">
+      <p class="card-text"></p> 
+    <p>{reply.body}</p>
+    </div>
 </div>
-</div>
+  )}  
+
+
+
 
 <input
         id="reply"

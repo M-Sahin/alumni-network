@@ -66,7 +66,7 @@ async function LoadPosts() {
         })
       ))
       localStorage.setItem("posts", JSON.stringify(postsData))    
-      console.log(localStorage.getItem("posts"))   
+       
       
     
 };
