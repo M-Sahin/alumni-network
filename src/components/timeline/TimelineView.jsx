@@ -3,6 +3,7 @@ import {LoadPosts, UpdatePost, NewPost} from './Timeline';
 import { useState } from "react";
 import { Button, Modal } from 'react-bootstrap';
 import Searchbar from '../searchbar/Searchbar';
+import {Link} from 'react-router-dom';
 
 
 
@@ -19,7 +20,7 @@ function TimelineView(){
   const { search } = window.location;
   const query = new URLSearchParams(search).get('s');
   const [searchQuery, setSearchQuery] = useState(query || '');
-  
+   
 
 const filterPosts = (posts, query) => {
     if (!query) {
@@ -33,6 +34,10 @@ const filterPosts = (posts, query) => {
 };
 
 const filteredPosts = filterPosts(posts, searchQuery);
+
+function getPostid(id){
+  sessionStorage.setItem('postId', id)
+}
 
 function handlePost(){
     setShow2(false);
@@ -49,7 +54,7 @@ async function handleUpdate(id){
     setShow(false);
     console.log(title, body)
     await UpdatePost(title, body, id)
-    console.log(id)
+    console.log(id)  
 }
 
 function modalindex(index) {
@@ -97,13 +102,18 @@ return (
     {setSearchQuery}
 
 <ul>
-{filteredPosts.map((post, index) => (
+{filteredPosts.map((post, index) => ( 
 <div class="card">
   <div class="card-body">
     <p class="card-text"></p>
     <p>{post.title}</p>
-    <p>{post.body}</p> 
-    <a href="/replies"><button type="button" class="btn btn-primary mr-1">Reply</button></a>
+    <p>{post.body}</p>       
+    <>
+    <Link to={{
+      pathname: '/replies',
+      state: {id: post.id}    
+    }} ><Button variant="primary" class="btn btn-primary" onClick={() => getPostid(post.id)}>Reply</Button> </Link>
+    </>
     <Button variant="primary" class="btn btn-primary" onClick={() => modalindex(index)}>
         Edit
     </Button>

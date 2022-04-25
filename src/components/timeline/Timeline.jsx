@@ -3,7 +3,7 @@ import { createHeaders } from "../..";
   const UpdatePost = async (title, body, id) => {    
     
            try {           
-          const response = await fetch("https://localhost:44370/api/Posts/" + id, {
+          const response = await fetch('https://localhost:44370/api/Posts/' + id, {
             method: "PATCH",
             headers: createHeaders(),
             body: JSON.stringify({
@@ -28,11 +28,11 @@ import { createHeaders } from "../..";
       };
 
   const NewPost = async (title, body, senderUserId, targetUserId, targetGroupId, targetTopicId) => {
-    fetch("https://localhost:44370/api/Posts", {
+    fetch('https://localhost:44370/api/Posts', {
     
 
     method: 'POST',      
-    headers: {'Content-Type': 'application/json; charset=utf-8 '},
+    headers: {'content-type': 'application/json; charset=utf-8' },
     body: JSON.stringify({
       title: title,
       body: body,
@@ -51,7 +51,7 @@ async function LoadPosts() {
   let posts = []
   let postsData = []
 
-  await fetch("https://localhost:44370/api/Posts")  
+ await fetch('https://localhost:44370/api/Posts')  
       .then(response => response.json())
       .then(data => posts.push(data));
       posts[0].map(post=>(
