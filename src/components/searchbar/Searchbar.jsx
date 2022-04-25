@@ -1,7 +1,7 @@
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
     <form action="/timeline" method="get">
         <label htmlFor="header-search">
-            <span className="visually-hidden">Search blog posts</span>
+            <span className="visually-hidden">Search posts</span>
         </label>
         <input
             value={searchQuery}

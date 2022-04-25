@@ -7,6 +7,8 @@ import {Link} from 'react-router-dom';
 
 
 
+
+
 function TimelineView(){
   LoadPosts()
   let posts = (JSON.parse(localStorage.getItem("posts")))
@@ -65,8 +67,10 @@ function modalindex(index) {
 const handleShow = () => setShow2(true);
 
 return (
+ 
 <section>
-  <Button variant="primary" class="btn btn-primary mr-1" onClick={handleShow}>
+
+  <Button variant="primary" class="btn btn-primary"  onClick={handleShow}>
     Post
   </Button>
   <Modal show={show2} onHide={handleClose2}>
@@ -90,16 +94,17 @@ return (
       </div>
     </Modal.Body>
     <Modal.Footer>
-     <Button variant="secondary" onClick={handleClose2}>
+     <Button class="close" variant="secondary" onClick={handleClose2}>
        Close
      </Button>
      <Button variant="primary" onClick={handlePost}>
        Post
      </Button>
     </Modal.Footer>
-  </Modal>      
-  <Searchbar />
-    {setSearchQuery}
+  </Modal>   
+  <Searchbar class="searchbar" />
+    {setSearchQuery}   
+ 
 
 <ul>
 {filteredPosts.map((post, index) => ( 
@@ -130,7 +135,7 @@ return (
       </div>
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="secondary" onClick={handleClose}>
+      <Button class="close" variant="secondary" onClick={handleClose}>
           Close
       </Button>
       <Button variant="primary" onClick={() => handleUpdate(filteredPosts[modalIndex].id)}>

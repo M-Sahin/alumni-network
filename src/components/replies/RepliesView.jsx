@@ -13,6 +13,7 @@ let post = (JSON.parse(localStorage.getItem("post")))
 
 
 
+
 function handleReply(){
     let body = document.getElementById("reply").value;
     NewReply(body, sessionStorage.getItem('postId'))    
