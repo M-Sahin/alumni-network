@@ -10,3 +10,13 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+export const createHeaders = () => {
+
+  return {
+
+      'Content-Type': 'application/json',
+
+        }
+
+}
+

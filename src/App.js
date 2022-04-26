@@ -3,6 +3,8 @@ import React from "react";
 import Login from "./components/login/Login";
 import Calendar from "./components/calendar/CalendarView";
 
+import TimelineView from "./components/timeline/TimelineView";
+import RepliesView from "./components/replies/RepliesView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -14,8 +16,12 @@ function App() {
 			<div className="App">
 				<Routes>
 					<Route path="/" element={<Login />} />
-          <Route path="/Calendar" element={<Calendar />} />
-          </Routes>
+         	 		<Route path="/Calendar" element={<Calendar />} />
+					<Route path="/" element={<Login />} />	
+					<Route path="/timeline" element={ <TimelineView /> } />	
+					<Route path="/replies" element={ <RepliesView /> } />				
+							
+          	</Routes>
           </div>
           </BrowserRouter>   
   );
