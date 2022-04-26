@@ -1,5 +1,6 @@
 import React from "react";
 import { LoadReplies, NewReply, LoadPost} from './Replies';
+import './Replies.css';
 
 
 
@@ -23,6 +24,7 @@ function handleReply(){
 return ( 
    
 <section>
+
 <div class="card">
   <div class="card-body">
     <p class="card-text"></p>
@@ -53,6 +55,9 @@ return (
         placeholder="Reply"
 />
     <button class="btn btn-primary" onClick={handleReply}>Reply</button>
+
+  
+
        
 </section>  
 

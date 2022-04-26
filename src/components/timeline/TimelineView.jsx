@@ -70,6 +70,7 @@ return (
  
 <section>
 
+
   <Button variant="primary" class="btn btn-primary"  onClick={handleShow}>
     Post
   </Button>
@@ -147,6 +148,7 @@ return (
 </div>
 ))}
 </ul>
+
 </section>
 );
 };

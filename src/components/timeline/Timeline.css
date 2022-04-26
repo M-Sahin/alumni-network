@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+
 * {
 	box-sizing: border-box;
 }
 
 body {
-	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	background-color: #2b6777;
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: 'Lato', sans-serif;
@@ -38,6 +39,7 @@ h1 {
 input {
     border-radius:10px;    
 }
+
 
 .btn-primary:hover {
     margin-right: 5px;
