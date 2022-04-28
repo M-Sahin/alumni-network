@@ -3,7 +3,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
         <label htmlFor="header-search">
             <span className="visually-hidden">Search posts</span>
         </label>
-        <input
+        <input style={{display: "block", margin: "auto", marginBottom: 20}}
             value={searchQuery}
             onInput={e => setSearchQuery(e.target.value)}
             type="text"
@@ -11,7 +11,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
             placeholder="Search post title"
             name="s" 
         />
-        <button class="btn btn-primary" type="submit">Search</button>
+        <button style={{display: "block", margin: "auto"}} class="btn btn-primary" type="submit">Search</button>
     </form>
 );
 

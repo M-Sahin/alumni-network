@@ -18,6 +18,5 @@ export const createHeaders = () => {
       'Content-Type': 'application/json',
 
         }
-
 }
 

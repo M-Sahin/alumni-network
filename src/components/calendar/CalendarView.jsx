@@ -6,6 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction" // needed for dayClick
 import loadEvents from './Calendar.jsx'
 import { Modal } from 'react-bootstrap';
 import { useState } from 'react';
+import Nav from "../navbar/Navbar";
 
 function Calendar(){
   const [show, setShow] = useState(false);
@@ -44,7 +45,9 @@ function Calendar(){
 
 
   return(
-  <div>
+  <div style={{ backgroundColor: 'white' }}>
+    <Nav />
+
     <div className= "container-md">
       <div className ="row">
         <div className = "col-10">

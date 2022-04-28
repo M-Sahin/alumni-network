@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Button, Modal } from 'react-bootstrap';
 import Searchbar from '../searchbar/Searchbar';
 import {Link} from 'react-router-dom';
-//import styles from './Timeline.css';
+import Nav from "../navbar/Navbar";
+import styles from './Timeline.css';
+import { Helmet } from "react-helmet";
 
 
 
@@ -66,9 +68,17 @@ function modalindex(index) {
 const handleShow = () => setShow2(true);
 
 return (
- 
 <section>
-  <Button variant="primary" class="btn btn-primary"  onClick={handleShow}>
+
+<Nav />
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    
+    </div>
+    <div class="col-sm ">
+    <Button  style={{display: "block", margin: "auto"}} variant="primary" class="btn btn-primary"  onClick={handleShow}>
     Post
   </Button>
   <Modal show={show2} onHide={handleClose2}>
@@ -102,9 +112,7 @@ return (
   </Modal>   
   <Searchbar class="searchbar" />
     {setSearchQuery}   
- 
-
-<ul>
+    <ul>
 {filteredPosts.map((post, index) => ( 
 <div class="card">
   <div class="card-body">
@@ -145,6 +153,12 @@ return (
 </div>
 ))}
 </ul>
+    </div>
+    <div class="col-sm">
+    
+    </div>
+  </div>
+</div>
 
 </section>
 );

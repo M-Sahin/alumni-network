@@ -1,5 +1,7 @@
 import React from "react";
 import keycloak from "../../keycloak";
+import {Link} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
 const Nav  = () => (
@@ -13,7 +15,7 @@ const Nav  = () => (
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/Timeline">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/Timeline">Posts</a>
@@ -30,7 +32,12 @@ const Nav  = () => (
         </ul>
     </div>
     <form className="d-flex">
-      <a href="/"><button class="btn btn-secondary">Logout</button></a>
+      <>
+    <Link to={{
+      pathname: '/', 
+    }} ><Button variant="primary" class="btn btn-primary">Logout</Button> </Link>
+    </>
+
     </form>
   </div>
 </nav>

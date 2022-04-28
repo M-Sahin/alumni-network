@@ -5,7 +5,7 @@ import Calendar from "./components/calendar/CalendarView";
 
 import TimelineView from "./components/timeline/TimelineView";
 import RepliesView from "./components/replies/RepliesView";
-import Nav from "./components/navbar/navbar.js";
+import Nav from "./components/navbar/Navbar.js";
 import Secured from "./components/secured/securedPage";
 import { ReactKeycloakProvider } from "@react-keycloak/web";
 import keycloak from "./keycloak"
