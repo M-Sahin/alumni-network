@@ -1,10 +1,9 @@
-import './Timeline.css';
 import {LoadPosts, UpdatePost, NewPost} from './Timeline';
 import { useState } from "react";
 import { Button, Modal } from 'react-bootstrap';
 import Searchbar from '../searchbar/Searchbar';
 import {Link} from 'react-router-dom';
-
+//import styles from './Timeline.css';
 
 
 
@@ -69,8 +68,6 @@ const handleShow = () => setShow2(true);
 return (
  
 <section>
-
-
   <Button variant="primary" class="btn btn-primary"  onClick={handleShow}>
     Post
   </Button>

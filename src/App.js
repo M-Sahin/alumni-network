@@ -16,8 +16,7 @@ function App() {
 			<div className="App">
 				<Routes>
 					<Route path="/" element={<Login />} />
-         	 		<Route path="/Calendar" element={<Calendar />} />
-					<Route path="/" element={<Login />} />	
+         	 		<Route path="/Calendar" element={<Calendar />} />	
 					<Route path="/timeline" element={ <TimelineView /> } />	
 					<Route path="/replies" element={ <RepliesView /> } />				
 							

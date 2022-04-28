@@ -15,7 +15,8 @@ async function loadEvents (){
       events[0].map(event=>{
         eventsData.push({
           title: event.name,
-          date: event.endTime
+          start: event.startTime,
+          end: event.endTime
         })
       })
       localStorage.setItem("events", JSON.stringify(eventsData))

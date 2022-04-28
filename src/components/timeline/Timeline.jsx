@@ -29,8 +29,6 @@ import { createHeaders } from "../..";
 
   const NewPost = async (title, body, senderUserId, targetUserId, targetGroupId, targetTopicId) => {
     fetch('https://localhost:44370/api/Posts', {
-    
-
     method: 'POST',      
     headers: {'content-type': 'application/json; charset=utf-8' },
     body: JSON.stringify({

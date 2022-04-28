@@ -50,4 +50,5 @@ export default class CalendarPage extends React.Component {
 
     return await test;
   }
+  
 }

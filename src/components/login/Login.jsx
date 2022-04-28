@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Navigate } from 'react-router-dom';
 
 import "./Login.css";
 
@@ -40,7 +41,7 @@ function Login() {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
-        setIsSubmitted(true);        
+        setIsSubmitted(true);      
       }
     } else {
       // Username not found
@@ -79,7 +80,7 @@ function Login() {
     <div className="app">
       <div className="login-form">
         <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? <Navigate to="/Timeline" />    : renderForm}
       </div>
     </div>
   );
