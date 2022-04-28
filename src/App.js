@@ -15,8 +15,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 	return (
 		<div className="App">
-			<ReactKeycloakProvider authClient={keycloak}>
 			<Nav />
+			<ReactKeycloakProvider authClient={keycloak}>
 		<BrowserRouter>
 				<Routes>					
 					<Route exact path="/" element={<Login />} />	
